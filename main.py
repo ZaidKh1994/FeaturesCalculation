@@ -7,7 +7,7 @@ import pandas as pd
 from scipy.stats import skew, kurtosis
 
 
-# Load images from the "data" folder
+# Load images from the "data" Folder
 data_folder = "data"
 images = []
 for filename in os.listdir(data_folder):
