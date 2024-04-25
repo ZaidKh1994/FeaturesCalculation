@@ -48,10 +48,10 @@ def calculate_image_kurtosis(array):
 
 def calculate_image_skewness(array):
 
-    # Flatten the image pixels to calculate kurtosis
+    # Flatten the image pixels to calculate skewness
     flat_image = array.flatten()
 
-    # Calculate the kurtosis
+    # Calculate the skewness
     skewness_value = skew(flat_image)
 
     return skewness_value
@@ -63,7 +63,7 @@ medians = []
 max_vals = []
 min_vals = []
 trimmed_means = []
-RMS= []
+RMS = []
 Variance = []
 Standard_deviation = []
 Percentile_1 = []
@@ -76,6 +76,7 @@ Kurtosis = []
 Coefficient_of_variance = []
 Shanon_entropy = []
 Skewness = []
+
 # Calculate features for each image
 for img in images:
     means.append(np.mean(img))
@@ -96,6 +97,7 @@ for img in images:
     Coefficient_of_variance.append(np.std(img)/np.mean(img))
     Shanon_entropy.append(calculate_shannons_entropy(img))
     Skewness.append(calculate_image_skewness(img))
+
 # Calculate correlation between features
 features = np.array([means, medians, max_vals, min_vals, trimmed_means, RMS, Variance, Standard_deviation, Percentile_1
 , Percentile_50, Percentile_75, Percentile_99, Interquartile, mean_Deviation, Kurtosis, Coefficient_of_variance
